@@ -31,8 +31,25 @@ window.addEventListener("DOMContentLoaded", (event) => {
   const submitButton = document.getElementById("add-to-cart")
   submitButton.addEventListener("click", storeItem)
   
-  // const removeItem = () => {
 
-  // };
+  const removeItem = () => {
+    console.log(e.target.id);
+    // get access to button ids
+    // use ids to remove item from local storage
+    // call showCart again.
+
+    console.log(localStorage);
+
+    let itemIndex = e.target.id;
+    const item = localStorage.key(itemIndex);
+    localStorage.removeItem(item);
+
+    console.log("now ", localStorage);
+
+    showCart();
+  };
+
+  const removeBtns = document.getElementById("shopping-cart");
+  removeBtns.addEventListener("click", removeItem);
 
 });
